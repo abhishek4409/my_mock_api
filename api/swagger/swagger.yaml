@@ -1,0 +1,194 @@
+openapi: 3.0.0
+info:
+  title: Credit Review (Dummy)
+  description: Credit Cloud (Dummy) - Autonomous Receivables
+  contact:
+    name: abhishek.kumar
+  version: "4.0"
+servers:
+- url: http://localhost:5000/dms
+paths:
+  /getInternDataDummy.do:
+    post:
+      operationId: Task A
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InternDataDummyRequest'
+        required: true
+      responses:
+        200:
+          description: Data of Interns
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternDataDummyResponse'
+  /getInternLastCommitDummy.do:
+    post:
+      operationId: Task B
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InternLastCommitDummyRequest'
+        required: true
+      responses:
+        200:
+          description: Git commit history of a Intern
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternLastCommitDummyResponse'
+  /getInternUserStory.do:
+    post:
+      operationId: Task B
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InternUserStoryRequest'
+        required: true
+      responses:
+        200:
+          description: UserStory of Interns
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternUserStoryResponse'
+  /getInternUserStoryDetail.do:
+    post:
+      operationId: Task B
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InternUserStoryDetailRequest'
+        required: true
+      responses:
+        200:
+          description: Description of Intern's UserStory
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternUserStoryDetailResponse'
+components:
+  schemas:
+    InternDataDummyRequest:
+      type: object
+      properties:
+        internId:
+          type: string
+    InternDataDummyResponse:
+      type: array
+      description: Intern Data
+      items:
+        $ref: '#/components/schemas/InternDataFields'
+    InternDataFields:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the Intern
+          example: Saket Mishra
+        internId:
+          type: string
+          description: Employee Id
+          example: 120221
+        track:
+          type: string
+          description: Track of the intern
+          enum:
+          - Autonomus
+          - Machine Learning
+          - NLP
+    InternLastCommitDummyRequest:
+      type: object
+      properties:
+        internId:
+          type: string
+    InternLastCommitDummyResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/InternLastCommitFields'
+    InternLastCommitFields:
+      type: object
+      properties:
+        commitTimestamp:
+          type: string
+          description: Last commit timestamp
+          example: 2019-10-18 14:30:20
+        commitMessage:
+          type: string
+          description: Last commit message
+          example: Improved storybook component
+        commitStatus:
+          type: string
+          description: Commit status
+          enum:
+          - success
+          - fail
+    InternUserStoryRequest:
+      type: object
+      properties:
+        internId:
+          type: string
+    InternUserStoryResponse:
+      type: array
+      description: Intern Data
+      items:
+        $ref: '#/components/schemas/InternUserStoryFields'
+    InternUserStoryFields:
+      type: object
+      properties:
+        UserStoryName:
+          type: string
+          description: Name of the UserStory
+          example: Layout Config
+        UserStoryID:
+          type: string
+          description: ID of UserStory
+          example: CRD14
+        Priority:
+          type: string
+          description: Priority of UserStory
+          example: Medium
+        internId:
+          type: string
+          description: Employee Id
+          example: 120431
+        track:
+          type: string
+          description: Track of the intern
+          enum:
+          - Autonomus
+          - Machine Learning
+          - NLP
+    InternUserStoryDetailRequest:
+      type: object
+      properties:
+        internId:
+          type: string
+    InternUserStoryDetailResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/InternUserStoryDetailFields'
+    InternUserStoryDetailFields:
+      type: object
+      properties:
+        Type:
+          type: string
+          description: UserStory Type
+          example: Code Rewriting
+        Deadline:
+          type: string
+          description: Date of Deadline
+          example: 2019-10-18
+        DevStatus:
+          type: string
+          description: Commit status
+          enum:
+          - Started
+          - Not Started
+          - Moved to falcondev
+          - Moved to FFIT

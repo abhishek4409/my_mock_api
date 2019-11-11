@@ -1,0 +1,26 @@
+[
+    {
+        "Type" : "Code Rewriting",
+        "Deadline" : "2019-10-18",
+        "DevStatus" : "Started",
+        "internId" : "10485"
+    },
+    {
+        "Type" : "React Component",
+        "Deadline" : "2020-10-18",
+        "DevStatus" : "Not Started",
+        "internId" : "10485"
+    },
+    {
+        "Type" : "API",
+        "Deadline" : "2021-10-18",
+        "DevStatus" : "Moved to falcondev",
+        "internId" : "10485"
+    },
+    {
+        "Type" : "Backend",
+        "Deadline" : "2022-10-18",
+        "DevStatus" : "Moved to FFIT",
+        "internId" : "10485"
+    }
+]

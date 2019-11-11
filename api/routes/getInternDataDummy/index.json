@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Abhishek",
+        "internId": "10485",
+        "track": "Autonomous"
+    },
+    {
+        "name": "Kumar",
+        "internId": "58401",
+        "track": "NLP"
+    },
+    {
+        "name": "Pradeep",
+        "internId": "10479",
+        "track": "Machine Learning"
+    },
+    {
+        "name": "Bhattacharya",
+        "internId": "97401",
+        "track": "NLP"
+    }
+]

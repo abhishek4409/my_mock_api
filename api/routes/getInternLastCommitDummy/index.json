@@ -1,0 +1,14 @@
+[
+    {   
+        "internId" : "10485",
+        "commitTimestamp" : "2019-10-18 14:30:20",
+        "commitMessage" : "Improved storybook component",
+        "commitStatus" : "success"
+    },
+    {
+        "internId" : "10479",
+        "commitTimestamp" : "2018-11-28 11:21:21",
+        "commitMessage" : "Code Enhancement",
+        "commitStatus" : "fail"
+    }
+]
