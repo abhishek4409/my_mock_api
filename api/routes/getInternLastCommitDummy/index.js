@@ -6,7 +6,7 @@ const multer = require("multer")();
 router.post("/",multer.none(), (req, res) => {
     const requestData = req.body;
     const returnData = jsonData.filter(data => {
-        if(requestData.internId === data.internId) return data;
+        return (requestData.internId === data.internId);
     });
     res.send(returnData);
 });
